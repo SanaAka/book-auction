@@ -100,4 +100,3 @@ npm run dev
 ✅ Clear instructions for `.env` updates & local servers.  
 ✅ Works for new devs, easy copy-paste.
 
-If you want, I can save this as a `README.md` file and show you exactly how to push it to your repo — just say **“Yes, save & push!”** 🚀✨
