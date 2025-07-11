@@ -1,129 +1,67 @@
-📖 Book Auction Platform
+# 📖 Book Auction Platform
+
 <p align="center">
-<img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="350" alt="Laravel Logo">
+  <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="350" alt="Laravel Logo">
 </p>
 
 <p align="center">
-<img src="https://img.shields.io/badge/Laravel-11.x-FF2D20?style=for-the-badge&logo=laravel" alt="Laravel Version">
-<img src="https://img.shields.io/badge/PHP-8.2+-777BB4?style=for-the-badge&logo=php" alt="PHP Version">
-<img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="License">
+  <img src="https://img.shields.io/badge/Laravel-11.x-FF2D20?style=for-the-badge&logo=laravel" alt="Laravel Version">
+  <img src="https://img.shields.io/badge/PHP-8.2+-777BB4?style=for-the-badge&logo=php" alt="PHP Version">
+  <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="License">
 </p>
 
-A dynamic web application built with Laravel for hosting and participating in real-time book auctions. This platform allows administrators to manage books and auctions, while users can register via social media to place bids and receive live notifications.
+A dynamic web application built with Laravel for hosting and participating in real-time book auctions.  
+This platform allows administrators to manage books and auctions, while users can register via social login to place bids and receive live notifications.
 
-✨ Features
-Separate User & Admin Roles:
+---
 
-✅ Social-Only User Login: Users can only register and log in via social providers (e.g., Google).
+## ✨ Features
 
-✅ Dedicated Admin Login: Admins have a separate, secure login form.
+### 🔐 Separate User & Admin Roles
+- ✅ **Social-Only User Login:** Users register & log in via social providers (e.g., Google).
+- ✅ **Dedicated Admin Login:** Admins have a separate, secure login form.
 
-Complete Auction Lifecycle:
+### 📚 Complete Auction Lifecycle
+- ✅ **Auction Creation:** Admins select books and launch auctions with custom start/end times and prices.
+- ✅ **Live Bidding:** Users bid on active auctions. Bids must be higher than the current top bid.
+- ✅ **Automated Closing:** Auctions auto-close at the end time, declaring the highest bidder the winner.
+- ✅ **Manual Closing:** Admins can close any auction manually.
 
-✅ Auction Creation: Admins can select any book and put it up for auction with custom start/end times and prices.
+### 🔔 Real-Time User Alerts
+- ✅ **Outbid Notifications:** Users get instant emails when outbid.
+- ✅ **Win Notifications:** Winners get a congratulatory email when an auction closes.
+- ✅ **Ending Soon Reminders:** A daily task alerts bidders about auctions ending within 24 hours.
 
-✅ Live Bidding: Users can place bids on active auctions. The system validates bids to ensure they are higher than the current top bid.
+### 📊 Functional Dashboards
+- ✅ **Admin Dashboard:** Manage books, auctions, statuses, and winners.
+- ✅ **User Dashboard:** Track active bids and view won auctions.
 
-✅ Automated Closing: Auctions automatically close when their end time is reached. The system declares the highest bidder as the winner.
+---
 
-✅ Manual Closing: Admins have the ability to close any auction manually.
+## 🛠️ Tech Stack
 
-Real-Time User Alerts:
+- **Backend:** Laravel 11, PHP 8.2+
+- **Database:** MySQL
+- **Authentication:** Laravel Socialite (Google Login)
+- **Frontend:** Blade Templates, CSS, Vanilla JavaScript
+- **Email:** SMTP (Mailtrap for local testing)
+- **Scheduling:** Laravel Task Scheduler & Cron
 
-✅ Outbid Notifications: Users receive an instant email alert when another user places a higher bid.
+---
 
-✅ Win Notifications: Winners receive a congratulatory email as soon as an auction closes.
+## 🚀 Getting Started
 
-✅ Ending Soon Reminders: A daily scheduled task notifies bidders of auctions that are ending within 24 hours.
+Follow these steps to run the project locally for development & testing.
 
-Functional Dashboards:
+### ✅ Prerequisites
+- PHP >= 8.2
+- Composer
+- Node.js & NPM
+- MySQL database
 
-✅ Admin Dashboard: A comprehensive panel to manage all books and auctions, view statuses, and see winners.
+### ✅ Installation
 
-✅ User Dashboard: A personalized space for users to track their active bids and view a history of all the auctions they have won.
-
-🛠️ Tech Stack
-Backend: Laravel 11, PHP 8.2+
-
-Database: MySQL
-
-Authentication: Laravel Socialite (for Google Login)
-
-Frontend: Blade Templates, CSS, Vanilla JavaScript
-
-Email: SMTP with Mailtrap for local development testing
-
-Scheduling: Laravel's Task Scheduler & Cron for automated tasks
-
-🚀 Getting Started
-Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
-
-Prerequisites
-PHP (>= 8.2)
-
-Composer
-
-Node.js & NPM
-
-A MySQL database
-
-Installation
-Clone the repository:
-
-git clone https://github.com/your-username/book-auction.git
+1️⃣ Clone the repository:
+```bash
+git clone https://github.com/SanaAka/book-auction.git
 cd book-auction
-
-Install PHP dependencies:
-
-composer install
-
-Install JavaScript dependencies:
-
-npm install
-
-Create your environment file:
-
-cp .env.example .env
-
-Generate an application key:
-
-php artisan key:generate
-
-Configure your .env file:
-Open the .env file and update your database credentials, Google Socialite keys, and Mailtrap settings.
-
-DB_DATABASE=book_auction
-DB_USERNAME=root
-DB_PASSWORD=your_password
-
-GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret
-
-MAIL_MAILER=smtp
-MAIL_HOST=sandbox.smtp.mailtrap.io
-# ... and other Mailtrap credentials
-
-Run the database migrations and seeders:
-This single command will create all tables and populate the database with an admin user and 100 sample books.
-
-php artisan migrate:fresh --seed
-
-Admin Login: admin@example.com
-
-Password: password
-
-Start the servers:
-You need to run two servers in separate terminal windows.
-
-Terminal 1 (Laravel Server):
-
-php artisan serve
-
-Terminal 2 (Vite Frontend Server):
-
-npm run dev
-
-You can now access the application at http://127.0.0.1:8000.
-
-License
-This project is licensed under the MIT License - see the LICENSE.md file for details.
