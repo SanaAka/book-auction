@@ -8,15 +8,9 @@ use App\Http\Controllers\BidController;
 use App\Http\Controllers\DashboardController; // This import is important
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-| Here is where you can register web routes for your application.
-|--------------------------------------------------------------------------
-*/
-
+//==========================================================================
+// Book Auction Routes
+//==========================================================================
 // SECTION 1: GUEST & PUBLIC ROUTES
 //==========================================================================
 
