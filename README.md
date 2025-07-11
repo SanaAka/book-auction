@@ -74,6 +74,9 @@ npm run build
 # Next:
 
 ## 1.Edit your .env with your:
+DB_DATABASE, DB_USERNAME, DB_PASSWORD
+GOOGLE_CLIENT_ID & GOOGLE_CLIENT_SECRET
+MAILTRAP credentials
 
 ## 2.Start the servers:
 ```bash
